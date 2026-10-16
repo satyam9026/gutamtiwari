@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+
+  <title>Learning Community | Educational Information</title>
+  <meta name="description" content="Join our learning community for educational information, useful resources and regular learning updates.">
+  <meta name="robots" content="index, follow">
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '942474748380355');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=942474748380355&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --bg: #06101f;
+      --panel: #0c1b30;
+      --panel-light: #112541;
+      --gold: #f4c66a;
+      --gold-light: #ffe9ae;
+      --text: #f8fafc;
+      --muted: #aab8cc;
+      --border: rgba(244, 198, 106, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 50% 0%, #183052 0%, transparent 52%),
+        linear-gradient(145deg, #06101f, #0a1629 55%, #06101f);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .background-glow {
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(244, 198, 106, 0.055);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-one {
+      top: -100px;
+      left: -100px;
+    }
+
+    .glow-two {
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+      z-index: 1;
+      animation: pageAppear 0.8s ease both;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 25px 26px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      text-align: center;
+      background: linear-gradient(
+        155deg,
+        rgba(17, 37, 65, 0.98),
+        rgba(7, 19, 35, 0.98)
+      );
+      box-shadow: 0 24px 75px rgba(0, 0, 0, 0.36);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    /* Logo */
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      margin: 0 auto 21px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #1c3554, #071426);
+      border: 1px solid rgba(244, 198, 106, 0.75);
+      box-shadow:
+        0 0 30px rgba(244, 198, 106, 0.16),
+        inset 0 0 18px rgba(244, 198, 106, 0.06);
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    .logo-mark {
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
+      background: linear-gradient(
+        135deg,
+        #fff0bd,
+        #f4c66a,
+        #c68a2c
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-caption {
+      margin-top: 7px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      margin-bottom: 17px;
+      border: 1px solid rgba(244, 198, 106, 0.25);
+      border-radius: 50px;
+      background: rgba(244, 198, 106, 0.07);
+      color: var(--gold-light);
+      font-size: 10px;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 13px;
+      font-size: clamp(27px, 7vw, 35px);
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .intro {
+      max-width: 340px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .divider {
+      width: 70px;
+      height: 2px;
+      margin: 0 auto 24px;
+      border-radius: 10px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .features {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.025);
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-2px);
+      border-color: rgba(244, 198, 106, 0.35);
+      background: rgba(244, 198, 106, 0.045);
+    }
+
+    .feature-icon {
+      flex: 0 0 39px;
+      width: 39px;
+      height: 39px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(244, 198, 106, 0.1);
+      font-size: 19px;
+    }
+
+    .feature h3 {
+      margin: 1px 0 5px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .join-heading {
+      margin-bottom: 9px;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .join-description {
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .join-button {
+      width: 100%;
+      min-height: 57px;
+      padding: 15px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 239, 191, 0.65);
+      border-radius: 15px;
+      background: linear-gradient(110deg, #f6d786, #d9a642);
+      box-shadow: 0 8px 28px rgba(217, 166, 66, 0.2);
+      color: #101827;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+      animation: buttonGlow 2.5s ease-in-out infinite;
+    }
+
+    .join-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(217, 166, 66, 0.3);
+    }
+
+    .join-button:active {
+      transform: scale(0.98);
+    }
+
+    .telegram-icon {
+      font-size: 20px;
+    }
+
+    .safe-note {
+      margin-top: 15px;
+      color: #94a3b8;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 21px;
+      color: #8493a8;
+      font-size: 11px;
+    }
+
+    .footer a {
+      color: #b9c5d6;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-separator {
+      color: #526176;
+    }
+
+    /* Privacy policy */
+    .privacy-page {
+      display: none;
+      margin-top: 16px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      text-align: left;
+      animation: pageAppear 0.35s ease both;
+    }
+
+    .privacy-page:target {
+      display: block;
+    }
+
+    .privacy-page h2 {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    .privacy-page h3 {
+      margin: 18px 0 7px;
+      font-size: 14px;
+    }
+
+    .privacy-page p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--gold);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .disclaimer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #8290a4;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    @keyframes pageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% {
+        box-shadow: 0 8px 25px rgba(217, 166, 66, 0.15);
+      }
+      50% {
+        box-shadow: 0 8px 32px rgba(217, 166, 66, 0.28);
+      }
+    }
+
+    @media (max-width: 380px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      .card {
+        padding: 27px 17px 22px;
+        border-radius: 23px;
+      }
+
+      .feature {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="page-wrapper">
+    <section class="card" id="home">
+
+      <!-- LC Logo -->
+      <div class="logo" role="img" aria-label="Learning Community logo">
+        <div class="logo-mark">LC</div>
+        <div class="logo-caption">COMMUNITY</div>
+      </div>
+
+      <div class="eyebrow">Welcome to Our Community</div>
+
+      <h1>
+        Learning &amp;<br>
+        <span class="gold-text">Educational Community</span>
+      </h1>
+
+      <p class="intro">
+        Discover educational information, helpful resources and
+        learning updates in one simple, organized community.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="features">
+
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">📚</div>
+          <div>
+            <h3>Educational Information</h3>
+            <p>Explore useful information and learning resources
+              shared with our community.</p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">💡</div>
+          <div>
+            <h3>Learning &amp; Insights</h3>
+            <p>Discover new ideas and build your understanding
+              through educational content.</p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true">🔔</div>
+          <div>
+            <h3>Community Updates</h3>
+            <p>Stay informed about new posts, useful resources
+              and community announcements.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <h2 class="join-heading">
+        Join Our <span class="gold-text">Community</span>
+      </h2>
+
+      <p class="join-description">
+        Connect with the community and explore shared educational
+        information and resources.
+      </p>
+
+      <!-- Telegram Join Button -->
+      <a
+        class="join-button"
+        id="telegramJoin"
+        href="https://t.me/+UsF9QkOR9G1mNmQ9"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join our Telegram community"
+      >
+        <span class="telegram-icon" aria-hidden="true">✈</span>
+        <span>Join Telegram Community</span>
+      </a>
+
+      <p class="safe-note">
+        Join to access community content and updates.
+      </p>
+
+      <div class="disclaimer">
+        <strong>Important Information:</strong>
+        Content is provided for general educational and informational
+        purposes only. No specific outcome is promised. Please review
+        the information independently and make your own decisions.
+      </div>
+
+      <footer class="footer">
+        <a href="#privacy">Privacy Policy</a>
+        <span class="footer-separator">•</span>
+        <a href="#home">Home</a>
+      </footer>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section class="privacy-page" id="privacy">
+      <h2>Privacy Policy</h2>
+
+      <p>
+        This page explains general information about privacy when
+        visiting our educational community landing page.
+      </p>
+
+      <h3>Information We Collect</h3>
+      <p>
+        This page does not contain a registration form. Meta Pixel
+        may collect or process browser and interaction information
+        according to its configuration and applicable privacy settings.
+      </p>
+
+      <h3>External Services</h3>
+      <p>
+        When you select the Telegram button, you will be directed
+        to Telegram. Its own privacy policy and terms apply to your
+        use of that service.
+      </p>
+
+      <h3>Advertising Measurement</h3>
+      <p>
+        Meta Pixel is used for page-view and button-click measurement.
+        Tracking may depend on browser settings, consent requirements
+        and platform availability.
+      </p>
+
+      <h3>Contact Information</h3>
+      <p>
+        For privacy questions, contact the actual administrator
+        of this page using their published contact details.
+        Do not publish an email address here until it is verified.
+      </p>
+
+      <a class="back-link" href="#home">← Back to Home</a>
+    </section>
+  </main>
+
+  <!-- Meta Pixel: Telegram Button Click Tracking -->
+  <script>
+    (function () {
+      var joinButton = document.getElementById("telegramJoin");
+
+      if (!joinButton) return;
+
+      joinButton.addEventListener("click", function () {
+        if (typeof window.fbq === "function") {
+          window.fbq("trackCustom", "TelegramJoinClick", {
+            button_name: "Join Telegram Community",
+            destination: "Telegram"
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
